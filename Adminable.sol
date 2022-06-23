@@ -14,4 +14,8 @@ contract Adminable {
         require(msg.sender == admin);
         _;
     }
+
+    function changeAdminAddress(address payable _newAdmin) public checkIfAdmin{
+        admin = _newAdmin;
+    }
 }
