@@ -21,10 +21,12 @@ contract EscrowGenerator is UserSoul {
         _;
     }
 
+    constructor() payable{}
+
     event escrowDeployed(address indexed _escrowAddress, address _buyer, address _seller);
 
     //create new EscrowV1
-    function newEscrow(uint _transacId, address  _seller, uint[] memory _weiPrices) external {
+    function newEscrow(address  _seller, uint[] memory _weiPrices) external payable{
         uint _weiPricesSum = 0;
         for (uint256 i = 0; i < _weiPrices.length; ++i) {
             _weiPricesSum = ++_weiPrices[i];
