@@ -41,7 +41,7 @@ describe("User Soul Integration Test", () => {
 		);
 		let balance = await userSoul.getInviterBalance(owner.address, usdc.address);
 		if (balance === 0) {
-			await expect(userSoul.withdrawInviterRevenues(usdc.address)).to.be
+		  await expect(userSoul.withdrawInviterRevenues(usdc.address)).to.be
 				.reverted;
 		} else {
 			await userSoul.withdrawInviterRevenues(usdc.address);

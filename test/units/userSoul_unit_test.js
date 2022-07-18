@@ -61,9 +61,9 @@ describe("User Soul Unit Test", () => {
 	});
 	describe("Management", () => {
 		it("Owner should be able to modify the Gig Factory address", async () => {
-			userSoul.changeGigFactory(user1.address);
-			gigFactory = await userSoul.gigFactory();
-			expect(gigFactory).to.equal(user1.address);
+			await userSoul.changeGigFactory(user1.address);
+			let newGigFactoryAddress = await userSoul.gigFactory();
+			expect(newGigFactoryAddress).to.equal(user1.address);
 		});
 		it("Other users should not modify the Gig Factory address", async () => {
 			await expect(userSoul.connect(user1).changeGigFactory(user2.address)).to

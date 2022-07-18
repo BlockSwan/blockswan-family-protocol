@@ -9,15 +9,24 @@ ______ _            _    _____
 
 # B-Family Protocol v1
 
-This repository contains the smart contracts source code and markets configuration for B-Family Protocol V3. 
+This repository contains the smart contracts source code and markets configuration for B-Family Protocol V3.
 
 ## What is BlockSwan?
 
-BlockSwan is a digital assets organisation  powered by community intelligence.
+BlockSwan is a digital assets organisation powered by community intelligence.
 
 ## What is B-Family ?
 
 B-Family is a decentralized protocol for online freelancers. Sellers supply digital services, buyers are allowed to contract them upon clear and defines rules while judges can resolve conflicts and capture a part of the protocol revenues.
+
+## Contracts address
+
+|             | Polygon Mumbai                             |
+| ----------- | ------------------------------------------ |
+| User Soul   | 0x96205CC540F9256448f507Bd695A9C37B7bADAD2 |
+| Gig V1      | 0x66fbBfa3b7104E1F8Fc8089b5e843246e515fe70 |
+| Gig Factory | 0x349Eebb43f0Ef6A1056a0e260f8664a8DD84bdDd |
+| Fake USDC   | 0xAb2d097Fb4eBa52dc60842477564b381e1B85e56 |
 
 ## Documentation
 
@@ -26,7 +35,6 @@ See the link to the white paper or visit the BlockSwan Resources site
 - [White Paper](https://resources/blockswan.family/whitepaper.pdf)
 
 - [Resources site](https://resources/blockswan.family)
-
 
 ## Connect with the community
 
@@ -42,17 +50,19 @@ npm install
 
 ```
 
-## Setup
+## Running tests
 
-Before running the tests you  need to create an enviroment file named `.env` and fill the next enviroment variables
+Before running the tests you need to create an enviroment file named `.env` and fill the next enviroment variables
 
 ```
-# Add COIN MARKET CAP API key, and enable gas reporter
+# Add COIN MARKET CAP API key, enable or not GAS REPORTER
+# Add your POLYGON API key as well as the SECRET KEY of the deployer address.
+# Don't share this key anywhere!
 COINMARKETCAP_API_KEY=
 GAS_REPORTER_ENABLED=true
+POLYGONSCAN_API_KEY=
+DEPLOYER_PRIVATE_KEY=
 ```
-
-## Test
 
 You can run the full test suite with the following commands:
 

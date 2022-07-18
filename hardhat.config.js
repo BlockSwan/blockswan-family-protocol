@@ -5,6 +5,8 @@
 require("@nomiclabs/hardhat-waffle");
 require("hardhat-gas-reporter");
 require("solidity-coverage");
+require("@nomiclabs/hardhat-etherscan");
+require("@openzeppelin/hardhat-upgrades");
 const dotenv = require("dotenv");
 dotenv.config();
 
@@ -16,13 +18,6 @@ const gasPriceApi = {
 };
 
 module.exports = {
-	solidity: "0.8.4",
-	settings: {
-		optimizer: {
-			enabled: true,
-			runs: 200,
-		},
-	},
 	gasReporter: {
 		enabled: process.env.GAS_REPORTER_ENABLED,
 		noColors: false,
@@ -31,5 +26,24 @@ module.exports = {
 		token: "MATIC",
 		gasPriceApi: gasPriceApi.matic,
 		showTimeSpent: false,
+	},
+	networks: {
+		matic: {
+			url: "https://matic-mumbai.chainstacklabs.com/",
+			accounts: [process.env.DEPLOYER_PRIVATE_KEY],
+			allowUnlimitedContractSize: true,
+		},
+	},
+	etherscan: {
+		apiKey: process.env.POLYGONSCAN_API_KEY,
+	},
+	solidity: {
+		version: "0.8.4",
+		settings: {
+			optimizer: {
+				enabled: true,
+				runs: 200,
+			},
+		},
 	},
 };

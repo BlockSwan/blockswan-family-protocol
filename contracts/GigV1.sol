@@ -3,74 +3,8 @@ pragma solidity ^0.8.4;
 import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 import "hardhat/console.sol";
-
-interface IGigFactory {
-	function adminTax() external view returns (uint256);
-
-	function owner() external view returns (address);
-
-	function trialTax() external view returns (uint256);
-
-	function judgeRetribution() external view returns (uint256);
-
-	function affiliateRetribution() external view returns (uint256);
-
-	function protocolRetribution() external view returns (uint256);
-
-	function firstAffiliateFee() external view returns (uint256);
-
-	function secondAffiliateFee() external view returns (uint256);
-
-	function autoRefundDelay() external view returns (uint256);
-
-	function endTrialDelay() external view returns (uint256);
-
-	function emitStatusEvent(address _thisAddress, uint8 _status) external;
-
-	function emitVoteAdded(
-		address _address,
-		address _voter,
-		uint8 _vote
-	) external;
-}
-
-interface IUserSoul {
-	function getFirstInviter(address _user) external view returns (address);
-
-	function isJudge(address _user) external view returns (bool);
-
-	function isBan(address _user) external view returns (bool);
-
-	function incrValidVotes(
-		address _user,
-		address _token,
-		uint256 _amount
-	) external;
-
-	function onGigSuccess(address _buyer, address _seller) external;
-
-	function onGigFail(address _buyer, address _seller) external;
-
-	function onTrial(address _buyer, address _seller) external;
-
-	function increaseInvitersBalance(
-		address _buyer,
-		address _seller,
-		uint256 _amount,
-		address _token
-	) external;
-
-	function decreaseUserJudgeWeight(address _user, address _token) external;
-
-	function getInviterBalance(address _user, address _token)
-		external
-		view
-		returns (uint256);
-
-	function getUserWeight(address _user, address _token)
-		external
-		returns (uint256);
-}
+import "./interfaces/IGigFactory.sol";
+import "./interfaces/IUserSoul.sol";
 
 contract GigV1 is Initializable {
 	using SafeERC20 for IERC20;
