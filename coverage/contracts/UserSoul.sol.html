@@ -1,0 +1,866 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/UserSoul.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> UserSoul.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>68/68</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>18/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>29/29</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>71/71</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">177×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-yes">34×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">71×</span>
+<span class="cline-any cline-yes">70×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">72×</span>
+<span class="cline-any cline-yes">70×</span>
+<span class="cline-any cline-yes">70×</span>
+<span class="cline-any cline-yes">70×</span>
+<span class="cline-any cline-yes">70×</span>
+<span class="cline-any cline-yes">70×</span>
+<span class="cline-any cline-yes">70×</span>
+<span class="cline-any cline-yes">70×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">116×</span>
+<span class="cline-any cline-yes">116×</span>
+<span class="cline-any cline-yes">116×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">33×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">34×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">80×</span>
+<span class="cline-any cline-yes">75×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">42×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">86×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">83×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">83×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">40×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">68×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">156×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.4;
+&nbsp;
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
+import "hardhat/console.sol";
+&nbsp;
+interface IGigFactory {
+	function isFromGigFactory(address _caller) external view returns (bool);
+&nbsp;
+	function firstAffiliateFee() external view returns (uint256);
+&nbsp;
+	function secondAffiliateFee() external view returns (uint256);
+}
+&nbsp;
+contract UserSoul is Ownable {
+	using SafeERC20 for IERC20;
+	IGigFactory private _gigFactory;
+&nbsp;
+	struct User {
+		string identity;
+		mapping(address =&gt; uint256) inviterBalance;
+		mapping(address =&gt; uint256) judgeWeight;
+		address[2] inviters;
+		uint16 validVotes;
+		uint16 successSell;
+		uint16 successBuy;
+		uint16 failBuy;
+		uint16 failSell;
+		uint16 toTrial;
+		bool isJudge;
+		bool isBan;
+	}
+&nbsp;
+	mapping(address =&gt; User) private users;
+&nbsp;
+	/// @dev returns true if smart-contract.
+	bytes32 private zeroHash =
+		0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470;
+	uint256 private _balanceWeight;
+	uint256 private _totalValidVotes;
+&nbsp;
+	event Mint(address _user, address _inviter0, address _inviter1);
+	event Burn(address _user);
+	event Judge(address _user, bool isJudge);
+	event Ban(address _user, bool isBan);
+	event InviterWithdrawal(address _user, uint256 _amount, address _token);
+	event InvitersIncrease(
+		address _firstBuyerSeller,
+		address _secondBuyerInviter,
+		address _firstSellerInviter,
+		address _secondSellerInviter,
+		uint256 _amount,
+		address _token
+	);
+&nbsp;
+	constructor(address _newGigFactory) {
+		_gigFactory = IGigFactory(_newGigFactory);
+	}
+&nbsp;
+	modifier fromFactory() {
+		require(msg.sender == address(_gigFactory));
+		_;
+	}
+&nbsp;
+	modifier fromGig() {
+		require(_gigFactory.isFromGigFactory(msg.sender));
+		_;
+	}
+&nbsp;
+	function changeGigFactory(address _newFacto) public onlyOwner {
+		_gigFactory = IGigFactory(_newFacto);
+	}
+&nbsp;
+	function withdrawInviterRevenues(address _token) public {
+		uint256 _amount = users[msg.sender].inviterBalance[_token];
+		require(_amount &gt; 0);
+		users[msg.sender].inviterBalance[_token] = 0;
+		IERC20 _paymentToken = IERC20(_token);
+		_paymentToken.safeTransfer(msg.sender, _amount);
+		emit InviterWithdrawal(msg.sender, _amount, _token);
+	}
+&nbsp;
+	function mint(string memory _identity, address _inviter) external {
+		require(!hasSoul(msg.sender) &amp;&amp; _inviter != msg.sender);
+		_inviter = isZeroAddress(_inviter) ? owner() : _inviter;
+		address _secondInviter = users[_inviter].inviters[0];
+		_secondInviter = isZeroAddress(_secondInviter) ? owner() : _secondInviter;
+		users[msg.sender].identity = _identity;
+		users[msg.sender].inviters[0] = _inviter;
+		users[msg.sender].inviters[1] = _secondInviter;
+		emit Mint(msg.sender, _inviter, _secondInviter);
+	}
+&nbsp;
+	function burn() external {
+		require(hasSoul(msg.sender));
+		delete users[msg.sender];
+		emit Burn(msg.sender);
+	}
+&nbsp;
+	function setJudge(address _user) external onlyOwner {
+		bool judgeStatus = users[_user].isJudge;
+		users[_user].isJudge = !judgeStatus;
+		emit Judge(_user, !judgeStatus);
+	}
+&nbsp;
+	function setBan(address _user) external onlyOwner {
+		bool banStatus = users[_user].isBan;
+		users[_user].isBan = !banStatus;
+		emit Ban(_user, !banStatus);
+	}
+&nbsp;
+	function incrValidVotes(
+		address _user,
+		address _token,
+		uint256 _amount
+	) external fromGig {
+		users[_user].judgeWeight[_token] += _amount;
+	}
+&nbsp;
+	function decreaseUserJudgeWeight(address _user, address _token)
+		external
+		fromFactory
+	{
+		users[_user].judgeWeight[_token] = 0;
+	}
+&nbsp;
+	function onGigSuccess(address _buyer, address _seller) external fromGig {
+		users[_buyer].successBuy += 1;
+		users[_seller].successSell += 1;
+	}
+&nbsp;
+	function onGigFail(address _buyer, address _seller) external fromGig {
+		users[_buyer].failBuy += 1;
+		users[_seller].failSell += 1;
+	}
+&nbsp;
+	function onTrial(address _buyer, address _seller) external fromGig {
+		users[_buyer].toTrial += 1;
+		users[_seller].toTrial += 1;
+	}
+&nbsp;
+	function increaseInvitersBalance(
+		address _buyer,
+		address _seller,
+		uint256 _amount,
+		address _token
+	) external fromGig {
+		address _firstBuyerInviter = getFirstInviter(_buyer);
+		address _secondBuyerInviter = getSecondInviter(_buyer);
+&nbsp;
+		if (isZeroAddress(_firstBuyerInviter)) {
+			_firstBuyerInviter = owner();
+			_secondBuyerInviter = owner();
+		}
+		address _firstSellerInviter = getFirstInviter(_seller);
+		address _secondSellerInviter = getSecondInviter(_seller);
+&nbsp;
+		if (isZeroAddress(_firstSellerInviter)) {
+			_firstSellerInviter = owner();
+			_secondSellerInviter = owner();
+		}
+		uint256 _firstValue = (_amount * _gigFactory.firstAffiliateFee()) / 100 / 2;
+		uint256 _secondValue = (_amount * _gigFactory.secondAffiliateFee()) /
+			100 /
+			2;
+		users[_firstBuyerInviter].inviterBalance[_token] += _firstValue;
+		users[_secondBuyerInviter].inviterBalance[_token] += _secondValue;
+		users[_firstSellerInviter].inviterBalance[_token] += _firstValue;
+		users[_secondSellerInviter].inviterBalance[_token] += _secondValue;
+		emit InvitersIncrease(
+			_firstBuyerInviter,
+			_secondBuyerInviter,
+			_firstSellerInviter,
+			_secondSellerInviter,
+			_amount,
+			_token
+		);
+	}
+&nbsp;
+	function changeIdentity(string memory _newIdentity) external {
+		require(hasSoul(msg.sender));
+		users[msg.sender].identity = _newIdentity;
+	}
+&nbsp;
+	function getUser(address _user)
+		public
+		view
+		returns (
+			uint16,
+			uint16,
+			uint16,
+			uint16,
+			uint16,
+			uint16
+		)
+	{
+		return (
+			users[_user].validVotes,
+			users[_user].successSell,
+			users[_user].successBuy,
+			users[_user].failBuy,
+			users[_user].failSell,
+			users[_user].toTrial
+		);
+	}
+&nbsp;
+	function hasSoul(address _user) public view returns (bool) {
+		if (keccak256(bytes(users[_user].identity)) == zeroHash) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+&nbsp;
+	function isJudge(address _user) external view returns (bool) {
+		return (users[_user].isJudge);
+	}
+&nbsp;
+	function isBan(address _user) external view returns (bool) {
+		return (users[_user].isBan);
+	}
+&nbsp;
+	function getFirstInviter(address _user) public view returns (address) {
+		return (users[_user].inviters[0]);
+	}
+&nbsp;
+	function getSecondInviter(address _user) public view returns (address) {
+		return (users[_user].inviters[1]);
+	}
+&nbsp;
+	function getUserWeight(address _user, address _token)
+		public
+		view
+		returns (uint256)
+	{
+		return (users[_user].judgeWeight[_token]);
+	}
+&nbsp;
+	function getInviterBalance(address _user, address _token)
+		public
+		view
+		returns (uint256)
+	{
+		return (users[_user].inviterBalance[_token]);
+	}
+&nbsp;
+	function gigFactory() public view returns (address) {
+		return address(_gigFactory);
+	}
+&nbsp;
+	function balanceWeight() public view returns (uint256) {
+		return _balanceWeight;
+	}
+&nbsp;
+	function totalValidVotes() public view returns (uint256) {
+		return _totalValidVotes;
+	}
+&nbsp;
+	function getUserIdentity(address _user) public view returns (string memory) {
+		return users[_user].identity;
+	}
+&nbsp;
+	function isZeroAddress(address _input) public pure returns (bool) {
+		return _input == address(0x0000000000000000000000000000000000000000);
+	}
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Jul 18 2022 00:49:30 GMT+0200 (Central European Summer Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
