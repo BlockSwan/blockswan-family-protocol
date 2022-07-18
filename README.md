@@ -17,7 +17,7 @@ BlockSwan is a digital assets organisation powered by community intelligence.
 
 ## What is B-Family ?
 
-B-Family is a decentralized protocol for online freelancers. Sellers supply digital services, buyers are allowed to contract them upon clear and defines rules while judges can resolve conflicts and capture a part of the protocol revenues.
+B-Family is a decentralized protocol for online freelancers. Sellers supply digital services, buyers are allowed to contract them upon clear and defined rules while judges can resolve conflicts and capture a part of the protocol revenues.
 
 ## Contracts address
 
@@ -32,9 +32,9 @@ B-Family is a decentralized protocol for online freelancers. Sellers supply digi
 
 See the link to the white paper or visit the BlockSwan Resources site
 
-- [White Paper](https://resources/blockswan.family/whitepaper.pdf)
+- [White Paper](https://resources.blockswan.family/whitepaper.pdf)
 
-- [Resources site](https://resources/blockswan.family)
+- [Resources site](https://resources.blockswan.family)
 
 ## Connect with the community
 
@@ -47,7 +47,6 @@ To install dependencies:
 ```
 git clone https://github.com/BlockSwan/family-core-v1.git && cd family-core-v1
 npm install
-
 ```
 
 ## Running tests
